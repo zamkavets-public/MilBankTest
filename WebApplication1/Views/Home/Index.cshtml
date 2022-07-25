@@ -1,0 +1,19 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model NicknameEmailViewModel
+
+@inject IViewLocalizer Localizer
+
+@using (Html.BeginForm("Summary", "Home", FormMethod.Post))
+{
+    <b>@Html.LabelFor(m=>m.Nickname)</b><br />
+    @Html.TextBoxFor(m=>m.Nickname)<br />
+    @Html.ValidationMessageFor(m=>m.Nickname)<br />
+    <b>@Html.LabelFor(m=>m.Email)</b><br />
+    @Html.TextBoxFor(m=>m.Email)<br />
+    @Html.ValidationMessageFor(m=>m.Email)<br />
+    <input type="submit" id="submit-button" value="@Localizer["Submit"]" title="Submit" />
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

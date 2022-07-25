@@ -1,0 +1,9 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@model NicknameEmailViewModel
+
+@inject IViewLocalizer Localizer
+
+<b>@Html.LabelFor(m=>m.Nickname)</b><br />
+@Model.Nickname<br />
+<b>@Html.LabelFor(m=>m.Email)</b><br />
+@Model.Email<br />
